@@ -39,8 +39,16 @@ public class CacheTest {
         IO.println(savedStudent.getId());
     }
 
+    
     @Test
-    void test4(){
+    void test4() {
+        for (int i = 1; i <= 100; i++) {
+            Student student = new Student();
+            student.setName("Student " + i);
+            student.setDept("CSE");
 
+            Student savedStudent = studentService.saveStudent(student);
+            System.out.println("Saved ID: " + savedStudent.getId());
+        }
     }
 }
